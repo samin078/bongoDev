@@ -1,0 +1,80 @@
+/* Unit: pixel 1/96 of 1 inch */
+
+* {
+    margin: 0;
+    padding: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 250px;
+    height: 400px;
+}
+  
+
+.card:hover {
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.mini_avatar {
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    padding: 2px 2px;
+}
+
+img {
+    height: 250px;
+    width: 250px;
+
+}
+
+.text {
+    padding: 2px 8px;
+    margin: 0px 5px;
+}
+
+.mini_avatar {
+    padding: 2px 5px;
+    margin: 0px 5px;
+}
+
+.av_text {
+    padding: 12px;
+    color: #605d5d;
+}
+
+.av_img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 80%;
+    margin: 20px 20px;
+
+}
+
+
+
+.button {
+    width: fit-content;
+    background-color: #466fd1;
+    color: white;
+    border-radius: 3px;
+    border-style: hidden;
+    font-weight: 500;
+    margin: 5px 10px;
+    padding: 10px 10px;   
+}
+
+
+

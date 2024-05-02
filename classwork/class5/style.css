@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.list-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav {
+    background-color: blanchedalmond;
+    padding: 10px 20px;
+}
+
+.location_info {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    width: 80%;
+    margin: auto;
+}
+
+.address_info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

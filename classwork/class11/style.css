@@ -1,0 +1,23 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.hero {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.448), rgba(0, 0, 0, 0.407)), 
+    url('/bg-image.jpeg') no-repeat center / cover;
+    color: white;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

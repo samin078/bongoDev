@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.parent {
+    position: relative;
+}
+
+
+.child-one {
+    background-color: bisque;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.child-two {
+    background-color: brown;
+}
+
+.child-three {
+    background-color: red;
+    position: fixed;
+    top: 30;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.child {
+    padding: 10px;
+}
+
+.navbar {
+    background-color: black;
+    color: wheat;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 30px;
+    position: fixed;
+}
+
+body {
+    padding-top: 80px;
+    padding-left: 80px;
+}
+
+.left-nav {
+    position: relative;
+}
+
+.navbar-left {
+    position: fixed;
+    background-color: black;
+    color: wheat;
+    top: 78px;
+    left: 0;
+    bottom: 0;
+    width: 80px;
+}

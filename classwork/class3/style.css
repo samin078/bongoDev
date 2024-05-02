@@ -1,0 +1,20 @@
+/* Unit: pixel 1/96 of 1 inch */
+
+.child1 {
+    background-color: aqua;
+    margin: 10px 10px;
+}
+
+.child2 {
+    background-color: antiquewhite;
+    margin: 10px 10px;
+}
+
+.parent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 70%;
+    margin: auto;
+}

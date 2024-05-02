@@ -1,0 +1,78 @@
+/* Unit: pixel 1/96 of 1 inch */
+
+* {
+    margin: 0;
+    padding: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 80%;
+    margin: 20px 20px;
+}
+
+
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 75%;
+    height: 150px;
+    margin: 10px 25px;
+}
+  
+
+.mini_avatar {
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    padding: 2px 2px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+img {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+}
+
+.text {
+    padding: 2px 8px;
+    margin: 0px 5px;
+}
+
+
+
+.button {
+    width: fit-content;
+    background-color: #466fd1;
+    color: white;
+    border-radius: 3px;
+    border-style: hidden;
+    font-weight: 500;
+    margin: 5px 10px;
+    padding: 10px 10px;   
+}
+
+
+
+p {
+    color: #6a6868;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 5px;
+}
+
+h3 {
+    font-size: 25px;
+    padding: 5px;
+}
