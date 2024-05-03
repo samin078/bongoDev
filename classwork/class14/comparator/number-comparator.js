@@ -16,5 +16,5 @@ compareButton.addEventListener('click', function() {
     else {
         result.innerText = "Number1 less than Number2";
     }
-    console.log(num1, num2);
+    
 });
