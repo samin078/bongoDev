@@ -1,6 +1,7 @@
 // Initial products array
 const initialProducts = [
   {
+    ID: 1,
     name: 'Laptop',
     quantity: 10,
     price: 800,
@@ -8,6 +9,7 @@ const initialProducts = [
     category: 'Electronics',
   },
   {
+    ID: 2,
     name: 'Phone',
     quantity: 25,
     price: 500,
@@ -15,6 +17,7 @@ const initialProducts = [
     category: 'Electronics',
   },
   {
+    ID: 3,
     name: 'Desk Chair',
     quantity: 15,
     price: 150,
@@ -22,6 +25,8 @@ const initialProducts = [
     category: 'Furniture',
   },
 ];
+
+let id = initialProducts.length + 1;
 
 // Function to render products
 function renderProducts(products) {
@@ -63,53 +68,6 @@ function addRow(tableID) {
   });
 }
 
-function addRow2(tableID) {
-
-  const tableRef = document.getElementById(tableID);
-  clearTable("productTableBody");
-  initialProducts.forEach(function (product) {
-    const newRow = document.createElement('tr');
-
-    const newCell1 = document.createElement('td');
-    newCell1.innerText = product[0];
-
-    const newCell2 = document.createElement('td');
-    newCell2.innerText = product.quantity;
-
-    const newCell3 = document.createElement('td');
-    newCell3.innerText = product.price;
-
-    const newCell4 = document.createElement('td');
-    newCell4.innerText = product.vendor;
-
-    const newCell5 = document.createElement('td');
-    newCell5.innerText = product.category;
-
-
-    newRow.appendChild(newCell1);
-    newRow.appendChild(newCell2);
-    newRow.appendChild(newCell3);
-    newRow.appendChild(newCell4);
-    newRow.appendChild(newCell5);
-    
-    // const newCell6 = newRow.insertCell(5).innerHTML =
-    // '<button class="align-center bg-green-500 text-white p-2 rounded mx-6" onclick="editData(this)">Edit</button>' +
-    //     '<button class="align-center bg-red-500 text-white p-2 rounded mx-6" onclick="deleteData(this)">Delete</button>';
-  
-    // newDiv = document.createElement('div');
-    // editButton = document.createElement('button');
-    // deleteButton = document.createElement('button');
-    // editButton.classList.add('bg-green-500 text-white p-2 rounded mx-2');
-    // deleteButton.classList.add('bg-red-500 text-white p-2 rounded mx-2');
-    // editButton.innerHTML='Edit';
-    // const newCell6 = newRow.insertCell(5);
-    // newDiv.appendChild(editButton);
-    // newCell6.appendChild(editButton);
-    
-    // newCell6.appendChild(deleteButton);
-    tableRef.appendChild(newRow);
-  });
-}
 
 function addCell(index, newRow, value) {
   let newCell = newRow.insertCell(index);
@@ -121,12 +79,12 @@ function addCell(index, newRow, value) {
 function editButtonClick(index) {
   const formRef = document.getElementById("productForm");
 
+  formRef.productId.value = initialProducts[index].ID;
   formRef.productName.value = initialProducts[index].name;
   formRef.productPrice.value = initialProducts[index].price;
   formRef.productQuantity.value = initialProducts[index].quantity;
   formRef.productVendor.value = initialProducts[index].vendor;
   formRef.productCategory.value = initialProducts[index].category;
-
 }
 
 function deleteButtonClick(index) {
@@ -141,6 +99,7 @@ function clearTable(tableID) {
 
 function clearForm(formID) {
   const formRef = document.getElementById(formID);
+  formRef.productId.value = '';
   formRef.productName.value = '';
   formRef.productPrice.value = '';
   formRef.productQuantity.value = '';
@@ -150,20 +109,17 @@ function clearForm(formID) {
 
 function newProductEntry() {
 
+  const productId = document.getElementById('productId').value;
   const productName = document.getElementById('productName').value;
   const productQuantity = document.getElementById('productQuantity').value;
   const productPrice = document.getElementById('productPrice').value;
   const productVendor = document.getElementById('productVendor').value;
   const productCategory = document.getElementById('productCategory').value;
 
-  let idx = -1;
-  initialProducts.forEach(function (product, index) {
-    if(product.name === productName){
-      idx = index;
-    }
-  });
-  if(idx != -1){
-    initialProducts[idx]= {
+
+  if(productId > 0){
+    initialProducts[productId-1]= {
+      ID: productId,
       name: productName,
       quantity: productQuantity,
       price: productPrice,
@@ -173,6 +129,7 @@ function newProductEntry() {
   }
   else{
     initialProducts.push({
+      ID: id++,
       name: productName,
       quantity: productQuantity,
       price: productPrice,
@@ -181,20 +138,16 @@ function newProductEntry() {
     });
   }
 
-  console.log(initialProducts);
   clearForm("productForm");
   addRow("productTableBody");
-  
-  
 }
 
 addRow("productTableBody");
 
 const submitBtn = document.getElementById('submitBtn');
-const myForm = document.getElementById('productForm');
+// const myForm = document.getElementById('productForm');
 
 submitBtn.addEventListener('click' , function(e){
   e.preventDefault();
   newProductEntry();
-  
 });
